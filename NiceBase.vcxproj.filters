@@ -16,6 +16,9 @@
     <Filter Include="Library\font">
       <UniqueIdentifier>{c295c34d-8bce-42bb-bce8-4e303a72425b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hook">
+      <UniqueIdentifier>{7389d003-8a9d-4378-ac63-38df21da1ddf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Library\imgui\imconfig.h">
@@ -51,6 +54,10 @@
     <ClInclude Include="Library\font\font_awesome.hpp">
       <Filter>Library\font</Filter>
     </ClInclude>
+    <ClInclude Include="Hook.h">
+      <Filter>Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library\imgui\imgui.cpp">
@@ -71,8 +78,9 @@
     <ClCompile Include="Library\imgui\imgui_widgets.cpp">
       <Filter>Library\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="DllMain.cpp">
-      <Filter>Library</Filter>
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="Hook.cpp">
+      <Filter>Hook</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
