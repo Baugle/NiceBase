@@ -19,6 +19,18 @@
     <Filter Include="Hook">
       <UniqueIdentifier>{7389d003-8a9d-4378-ac63-38df21da1ddf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Control">
+      <UniqueIdentifier>{97a4b80d-2c23-4a94-ad88-5172a272efa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{841bd766-7e5d-4830-9a1f-8bd9b7d1a404}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{77183b96-c963-4fe5-8f0b-2b43c2ac32a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{e16bf27b-69f0-460f-b4c2-c8204bcdc0b1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Library\imgui\imconfig.h">
@@ -54,10 +66,22 @@
     <ClInclude Include="Library\font\font_awesome.hpp">
       <Filter>Library\font</Filter>
     </ClInclude>
-    <ClInclude Include="Hook.h">
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="Control\Control.h">
+      <Filter>Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Hook\Hook.h">
       <Filter>Hook</Filter>
     </ClInclude>
-    <ClInclude Include="Common.h" />
+    <ClInclude Include="Renderer\Renderer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\MainMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\Config.h">
+      <Filter>Config</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library\imgui\imgui.cpp">
@@ -79,8 +103,20 @@
       <Filter>Library\imgui</Filter>
     </ClCompile>
     <ClCompile Include="DllMain.cpp" />
-    <ClCompile Include="Hook.cpp">
+    <ClCompile Include="Control\Control.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook\Hook.cpp">
       <Filter>Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Renderer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu\MainMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\Config.cpp">
+      <Filter>Config</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

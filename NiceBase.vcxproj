@@ -44,6 +44,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LibraryPath>H:\NiceBase\NiceBase\Library\MinHook;$(LibraryPath)</LibraryPath>
+    <IncludePath>H:\NiceBase\NiceBase\Config;H:\NiceBase\NiceBase;H:\NiceBase\NiceBase\Renderer;H:\NiceBase\NiceBase\Hook;H:\NiceBase\NiceBase\Library\MinHook;H:\NiceBase\NiceBase\Library\JSON;H:\NiceBase\NiceBase\Library\imgui;H:\NiceBase\NiceBase\Library\font;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -68,18 +72,24 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpp23</LanguageStandard>
+      <LanguageStandard_C>stdclatest</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>d3d11.lib;MinHook.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/NODEFAULTLIB:"libcmt.lib" %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
-    <ClInclude Include="Hook.h" />
+    <ClInclude Include="Config\Config.h" />
+    <ClInclude Include="Control\Control.h" />
+    <ClInclude Include="Hook\Hook.h" />
     <ClInclude Include="Library\font\font_awesome.hpp" />
     <ClInclude Include="Library\imgui\imconfig.h" />
     <ClInclude Include="Library\imgui\imgui.h" />
@@ -91,16 +101,22 @@
     <ClInclude Include="Library\imgui\imstb_truetype.h" />
     <ClInclude Include="Library\JSON\json.hpp" />
     <ClInclude Include="Library\MinHook\MinHook.h" />
+    <ClInclude Include="Menu\MainMenu.h" />
+    <ClInclude Include="Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Config\Config.cpp" />
+    <ClCompile Include="Control\Control.cpp" />
     <ClCompile Include="DllMain.cpp" />
-    <ClCompile Include="Hook.cpp" />
+    <ClCompile Include="Hook\Hook.cpp" />
     <ClCompile Include="Library\imgui\imgui.cpp" />
     <ClCompile Include="Library\imgui\imgui_draw.cpp" />
     <ClCompile Include="Library\imgui\imgui_impl_dx11.cpp" />
     <ClCompile Include="Library\imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="Library\imgui\imgui_tables.cpp" />
     <ClCompile Include="Library\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Menu\MainMenu.cpp" />
+    <ClCompile Include="Renderer\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Library\MinHook\MinHook.lib" />
